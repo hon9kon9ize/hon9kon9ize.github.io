@@ -27,6 +27,10 @@ export async function generateMetadata(
   const fileName = fs.readFileSync(`public/posts/${slug}.md`, "utf-8")
   const { data: metadata } = matter(fileName)
   const previousImages = (await parent).openGraph?.images || []
+  const pageMetaImages =
+    metadata.image && metadata.image.startswith("/")
+      ? [`https://www.hon9kon9ize.com${metadata.image}`]
+      : []
 
   // return metadata
   return {
@@ -37,7 +41,7 @@ export async function generateMetadata(
     openGraph: {
       title: `${metadata.title} | Blog | hon9kon9ize`,
       description: metadata.description,
-      images: [metadata.image, ...previousImages],
+      images: [...pageMetaImages, ...previousImages],
       url: `https://www.hon9kon9ize.com/posts/${slug}`,
       type: "article",
     },
