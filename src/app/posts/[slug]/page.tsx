@@ -38,6 +38,14 @@ export async function generateMetadata(
     ...metadata,
     title: `${metadata.title} | Blog | hon9kon9ize`,
     description: metadata.description,
+    twitter: {
+      cardType: "summary_large_image",
+      description: metadata.description,
+      image: pageMetaImages[0],
+      title: `${metadata.title} | Blog | hon9kon9ize`,
+      url: `https://www.hon9kon9ize.com/posts/${slug}`,
+      domain: "hon9kon9ize.com",
+    },
     openGraph: {
       title: `${metadata.title} | Blog | hon9kon9ize`,
       description: metadata.description,
