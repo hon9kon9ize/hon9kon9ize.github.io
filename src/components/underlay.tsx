@@ -8,6 +8,7 @@ import * as THREE from "three"
 import { PCDModel } from "@/components/pcd-model"
 
 const pointCloudScale = new THREE.Vector3(2, -2, 2)
+const isDev = process.env.NODE_ENV !== "production"
 
 export const Underlay: React.FC<{
   mode?: "ring" | "model"
@@ -40,7 +41,7 @@ export const Underlay: React.FC<{
           // position={new THREE.Vector3(0, 0, 0)}
           // rotation={new THREE.Euler(-0.2, 0, 0)}
         />
-        <Stats />
+        {isDev && <Stats />}
       </Canvas>
     </div>
   )
