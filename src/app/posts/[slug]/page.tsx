@@ -2,7 +2,7 @@ import fs from "fs"
 import { ParsedUrlQuery } from "node:querystring"
 import matter from "gray-matter"
 import hljs from "highlight.js"
-import markdownit from "markdown-it"
+import MarkdownIt from "markdown-it"
 
 import "highlight.js/styles/atom-one-dark.css"
 
@@ -14,7 +14,7 @@ export default function Post(context: { params: PathsParams }) {
   const { slug } = context.params as PathsParams
   const fileName = fs.readFileSync(`public/posts/${slug}.md`, "utf-8")
   const { data: metadata, content } = matter(fileName)
-  const md = markdownit({
+  const md: MarkdownIt = new MarkdownIt({
     highlight: function (str, lang) {
       if (lang && hljs.getLanguage(lang)) {
         try {
