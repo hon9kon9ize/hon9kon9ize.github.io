@@ -71,7 +71,7 @@ print('\n'.join(lines_df[lines_df.str.contains(r'呢d[^a-zA-Z0-9]')].values))
 
 ## 廣東話成為低資源語言嘅原因
 
-廣東話成為低資源語言嘅原因有好多，除咗上面所講嘅俗寫字，仲有一定程度係因為文化上同學術上嘅影響。我聽過有台灣人覺得香港人好似天生識兩種語言，即是我哋所謂嘅「口語」同「書面語」，我哋自細開始就有兩個唔同嘅語言系統，作文一定係書面語，但冇人會用書面語講嘢，所以你會發現叫你睇廣東話文章可能會比書面語讀得慢。所有書、電視字幕、報紙同網上文章都以書面語為主流；另外學術上，好少聽到有課程係會教人寫廣東話，當然出面一定有學講廣東話嘅課程，但廣東話冇一個標準寫法，可能個個都有自己用字準則。過去都有唔少有關廣東話嘅學術研究，好多都着重嘅會話上，最多人知嘅應該係廿幾年前嘅 [hkcancor](https://github.com/fcbond/hkcancor) 一萬句口語錄音同標籤語料，另外最出色就係近年嘅 [Unsupervised Mandarin-Cantonese Machine Translation](https://arxiv.org/abs/2301.03971#:~:text=Advancements%20in%20unsupervised%20machine%20translation,abundance%20of%20parallel%20data%20available.)，佢哋係爬咗網絡上唔同嘅廣東話文章再由逐句逐句喺簡體中文句子中發掘相似語義句子，最出一萬條翻譯對。另外仲有 pyCantonese 列出一堆嘅可用 [dataset](https://pycantonese.org/data.html)。如果將所有可用嘅語料加埋一齊，檔案大小都仲係離 1gb 差好遠，規模上始終仲係太細。
+廣東話成為低資源語言嘅原因有好多，除咗上面所講嘅俗寫字，仲有一定程度係因為文化上同學術上嘅影響。我聽過有台灣人覺得香港人好似天生識兩種語言，即是我哋所謂嘅「口語」同「書面語」，我哋自細開始就有兩個唔同嘅語言系統，作文一定係書面語，但冇人會用書面語講嘢，所以你會發現叫你睇廣東話文章可能會比書面語讀得慢。所有書、電視字幕、報紙同網上文章都以書面語為主流；另外學術上，好少聽到有課程係會教人寫廣東話，當然出面一定有學講廣東話嘅課程，但廣東話冇一個標準寫法，可能個個都有自己用字準則。過去都有唔少有關廣東話嘅學術研究，好多都着重嘅會話上，最多人知嘅應該係廿幾年前嘅 [hkcancor](https://github.com/fcbond/hkcancor) 一萬句口語錄音同標籤語料，另外最出色就係近年嘅 [Unsupervised Mandarin-Cantonese Machine Translation](https://arxiv.org/abs/2301.03971#:~:text=Advancements%20in%20unsupervised%20machine%20translation,abundance%20of%20parallel%20data%20available.)，佢哋係爬咗網絡上唔同嘅廣東話文章再由逐句逐句喺簡體中文句子中發掘相似語義句子，建構出一萬條翻譯對。另外仲有 pyCantonese 列出一堆嘅可用 [dataset](https://pycantonese.org/data.html)。如果將所有可用嘅語料加埋一齊，檔案大小都仲係離 1gb 差好遠，規模上始終仲係太細。
 
 ## 低資源噉又點啫？
 
