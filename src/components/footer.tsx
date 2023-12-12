@@ -7,7 +7,7 @@ import {
 import { HuggingFaceIcon } from "./huggingface-icon"
 
 export const Footer: React.FC = () => (
-  <footer className="flex h-12 w-full flex-col items-center justify-center bg-black/10 md:h-24">
+  <footer className="z-10 flex h-12 w-full flex-col items-center justify-center bg-black/10 md:h-24">
     <div className="flex flex-row gap-4">
       <a
         className="flex h-full w-full items-center justify-center"
