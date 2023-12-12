@@ -28,7 +28,7 @@ export async function generateMetadata(
   const { data: metadata } = matter(fileName)
   const previousImages = (await parent).openGraph?.images || []
   const pageMetaImages =
-    metadata.image && metadata.image.startswith("/")
+    metadata.image && /^\//.test(metadata.image)
       ? [`https://www.hon9kon9ize.com${metadata.image}`]
       : []
 
