@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "description": "hon9kon9ize's website",
+  "license": "Apache-2.0",
   "author": "Joseph Cheng <indieijoseph@gmail.com>",
   "scripts": {
     "build": "next build",
