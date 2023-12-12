@@ -10,6 +10,24 @@ interface PathsParams extends ParsedUrlQuery {
   slug: string
 }
 
+export async function generateStaticParams() {
+  const files = fs.readdirSync("public/posts")
+  const posts = files.map((fileName) => {
+    const slug = fileName.replace(".md", "")
+    const readFile = fs.readFileSync(`public/posts/${fileName}`, "utf-8")
+    const { data: frontmatter } = matter(readFile)
+
+    return {
+      slug,
+      frontmatter,
+    }
+  })
+
+  return posts.map(({ slug }) => ({
+    slug,
+  }))
+}
+
 export default function Post(context: { params: PathsParams }) {
   const { slug } = context.params as PathsParams
   const fileName = fs.readFileSync(`public/posts/${slug}.md`, "utf-8")
