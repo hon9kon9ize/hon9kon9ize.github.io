@@ -3,7 +3,7 @@ import { Space_Mono } from "next/font/google"
 
 import "./globals.css"
 
-import { Footer } from "@/components/footer"
+import { Footer } from "@/components"
 
 const inter = Space_Mono({ weight: "400", subsets: ["latin"] })
 
