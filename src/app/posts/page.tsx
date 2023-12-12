@@ -1,7 +1,12 @@
 import fs from "fs"
+import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 import matter from "gray-matter"
+
+export const metadata: Metadata = {
+  title: "Blog | hon9kon9ize",
+}
 
 const ItemArrow: React.FC = () => (
   <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">

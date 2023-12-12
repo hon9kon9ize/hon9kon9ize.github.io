@@ -1,5 +1,6 @@
 import fs from "fs"
 import { ParsedUrlQuery } from "node:querystring"
+import { Metadata, ResolvingMetadata } from "next"
 import matter from "gray-matter"
 import hljs from "highlight.js"
 import MarkdownIt from "markdown-it"
@@ -8,6 +9,39 @@ import "highlight.js/styles/atom-one-dark.css"
 
 interface PathsParams extends ParsedUrlQuery {
   slug: string
+}
+
+interface Props {
+  params: PathsParams
+  searchParams: URLSearchParams
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // read route params
+  const slug = params.slug
+
+  // read markdown file
+  const fileName = fs.readFileSync(`public/posts/${slug}.md`, "utf-8")
+  const { data: metadata } = matter(fileName)
+  const previousImages = (await parent).openGraph?.images || []
+
+  // return metadata
+  return {
+    ...parent,
+    ...metadata,
+    title: `${metadata.title} | Blog | hon9kon9ize`,
+    description: metadata.description,
+    openGraph: {
+      title: `${metadata.title} | Blog | hon9kon9ize`,
+      description: metadata.description,
+      images: [metadata.image, ...previousImages],
+      url: `https://www.hon9kon9ize.com/posts/${slug}`,
+      type: "article",
+    },
+  } as Metadata
 }
 
 export async function generateStaticParams() {
