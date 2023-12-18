@@ -102,7 +102,7 @@ ppl = torch.exp(torch.stack(nlls).mean())
 | meta-llama/Llama-2-7b-hf | 37.2 |
 | indiejoseph/cantonese-llama-2-7b | 22.9 |
 
-數字越低代表個模型越有把握估到晒啲字。cantonese-llama-2 係用咗粵維基做二次預訓練，所以必定係最低 perplexity，可以用嚟作為一個參考指標；之後係 meta-llama/Llama-2-7b-hf 非常出色，Llama 2 paper 中有提過語料中有 0.13% 係 zh 而英文係佔 89.70% 共 27種語言；我本來對 Qwen 好大期望，但結果反映佢好可能用咗純簡中作訓練，所以 perplexity 低；ChatGLM 直頭 Inf，即時錯到離譜？或者 code 有 bug，唔深究喇；之後 Yi 6B／34B 都表現唔錯。
+數字越低代表個模型越有把握估到晒啲字。cantonese-llama-2 係用咗粵維基做二次預訓練，所以必定係最低 perplexity，可以用嚟作為一個參考指標；之後係 meta-llama/Llama-2-7b-hf 非常出色，Llama 2 paper 中有提過語料中有 0.13% 係 zh 而英文係佔 89.70% 共 27 種語言；我本來對 Qwen 好大期望，但結果反映佢好可能用咗純簡中作訓練，所以 perplexity 低；ChatGLM 直頭 Inf，即是錯到離譜？或者 code 有 bug，唔深究喇；之後 Yi 6B／34B 都表現唔錯。
 
 ### 句子接龍
 
