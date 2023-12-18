@@ -10,7 +10,7 @@ author: Joseph Cheng
 
 今次文章係三步曲中嘅第一步，重點會講點揀預訓練模型嚟微調任務。調教大語言模型前，先搞清楚啲術語先：「預訓練（Pre-training）」、「微調（Fine-tuning）」。文章標題係調教大語言模型，調教意指微調而非預訓練，預訓練係一個非常重要而且唔係一般人可以做得到嘅嘢，比如 Meta 嘅 [Llama-2](https://github.com/microsoft/Llama-2-Onnx/blob/main/MODEL-CARD-META-LLAMA-2.md) 7B 模型用咗二萬億個 tokens（唔多解釋咩係 token，你當係一個 token 等如一個中文字先），訓練咗 184,320 GPU 小時，呢個規模只有大公司先可以花費得起。微調相對嚟講用嘅資源就可以好平民化，有一張家用 GPU，最好有 24GB vram 就可以玩得起。
 
-Meta 嘅 Llama-2 出咗好多版本，好似 [Llama-2-7b](https://huggingface.co/meta-llama/Llama-2-7b) 係我所講嘅預訓練模型，即是未經過微調，本身冇對話或處理任務嘅能力，只係識估下一隻 token 係咩；而 [Llama-2-7b-chat] 故名思意係被微調到識傾偈嘅模型，一般如果模型名有 chat 都表示做咗微調。除咗傾下偈當然仲有好多唔同嘅任務可以訓練佢，有啲人會專微調佢成為翻譯、記摘要、或者 roleplay 噉呢啲專門任務，而好似 [Alpaca](https://huggingface.co/datasets/tatsu-lab/alpaca) 呢類微調語料就係包括多種廣泛任務。
+Meta 嘅 Llama-2 出咗好多版本，好似 [Llama-2-7b](https://huggingface.co/meta-llama/Llama-2-7b) 係我所講嘅預訓練模型，即是未經過微調，本身冇對話或處理任務嘅能力，只係識估下一隻 token 係咩；而 [Llama-2-7b-chat](https://huggingface.co/meta-llama/Llama-2-7b-chat) 故名思意係被微調到識傾偈嘅模型，一般如果模型名有 chat 都表示做咗微調。除咗傾下偈當然仲有好多唔同嘅任務可以訓練佢，有啲人會專微調佢成為翻譯、記摘要、或者 roleplay 噉呢啲專門任務，而好似 [Alpaca](https://huggingface.co/datasets/tatsu-lab/alpaca) 呢類微調語料就係包括多種廣泛任務。
 
 點解要調教自己嘅模型呢？ChatGPT 都夠晒勁啦。其實好多場景都需要自己去 run 一個大語言模型，我所見其中一個最多人噉做嘅原因係 censorship 問題，當你問 ChatGPT 點樣暪住老婆去出軌，佢會苦口婆心叫你唔好噉做，大家都知有好多話題都會牽涉道德問題，作為一個面向大眾嘅服務 OpenAI 一定要把關，但如果我想做一個婚姻輔導嘅 Chatbot，需要問及好深入婚姻及兩性問題時，佢就叫你「咪啦」噉，點搞…，另外私隱問題都係好多人關注嘅，呢啲種種原因令好多開源微調模型應運而生。
 
@@ -190,9 +190,9 @@ Poe's ChatGPT
 
 同樣地由幾次生成中揀咗呢啲答案出嚟，Qwen／Yi 每次都答啱；Llama 2 成日都問非所答，有時生成一啲唔存在嘅答案添。呢個 test 可以知道模型嘅常識係咪 update，如果問 ChatGPT 佢而家仲答緊林鄭...
 
-### 邏輯對理
+### 邏輯推理
 
-呢個測試都幾重要，因為佢反映模型識唔識運用已有嘅知識去創造出新嘅內容。用一啲邏輯對理要佢求出答案：
+呢個測試都幾重要，因為佢反映模型識唔識運用已有嘅知識去創造出新嘅內容。用一啲邏輯推理要佢求出答案：
 
 ```python
 prompt = """1 + n = 10;

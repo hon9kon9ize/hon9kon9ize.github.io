@@ -16,16 +16,26 @@ const ItemArrow: React.FC = () => (
 
 export default function Blog() {
   const files = fs.readdirSync("public/posts")
-  const posts = files.map((fileName) => {
-    const slug = fileName.replace(".md", "")
-    const readFile = fs.readFileSync(`public/posts/${fileName}`, "utf-8")
-    const { data: frontmatter } = matter(readFile)
+  const posts = files
+    .map((fileName) => {
+      const slug = fileName.replace(".md", "")
+      const readFile = fs.readFileSync(`public/posts/${fileName}`, "utf-8")
+      const { data: frontmatter } = matter(readFile)
 
-    return {
-      slug,
-      frontmatter,
-    }
-  })
+      return {
+        slug,
+        frontmatter,
+      }
+    })
+    .sort((a, b) => {
+      if (a.frontmatter.updated > b.frontmatter.updated) {
+        return -1
+      } else if (a.frontmatter.updated < b.frontmatter.updated) {
+        return 1
+      } else {
+        return 0
+      }
+    })
 
   return (
     <div className="flex-col pt-12">
@@ -41,6 +51,7 @@ export default function Blog() {
                     width="320"
                     height="168"
                     alt={frontmatter.title}
+                    className="min-w-full"
                   />
                   <h4 className="p-0">
                     {frontmatter.title} <ItemArrow />
