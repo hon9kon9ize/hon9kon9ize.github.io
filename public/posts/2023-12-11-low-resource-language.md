@@ -363,4 +363,4 @@ Output:
 
 嚟緊我哋會訓練一個廣東話嘅 LLM 嚟生成更多好嘅語料，希望可以為廣東話社群做少少貢獻。
 
-PS：我哋將成個 dataset 放咗上 [Hugging Face](hon9kon9ize/38k-zh-yue-translation-llm-generated)
+PS：我哋將成個 dataset 放咗上 [Hugging Face](https://huggingface.co/datasets/hon9kon9ize/38k-zh-yue-translation-llm-generated)

@@ -4,8 +4,27 @@ import { Metadata, ResolvingMetadata } from "next"
 import matter from "gray-matter"
 import hljs from "highlight.js"
 import MarkdownIt from "markdown-it"
+import mia from "markdown-it-anchor"
+import mila from "markdown-it-link-attributes"
 
 import "highlight.js/styles/atom-one-dark.css"
+
+/** Same with GitHub */
+const slugify = (hash: string) =>
+  encodeURIComponent(
+    hash
+      .trim()
+      .toLowerCase()
+      // whitespace
+      .replace(/ /g, "-")
+      // Special symbol
+      .replace(
+        /[　`~!@#$%^&*()=+\[{\]}\\|;:'",<.>/?·～！¥…（）—【「】」、；：‘“’”，《。》？]/g,
+        ""
+      )
+      // 全角符号
+      .replace(/[\uff00-\uffff]/g, "")
+  )
 
 interface PathsParams extends ParsedUrlQuery {
   slug: string
@@ -98,6 +117,20 @@ export default function Post(context: { params: PathsParams }) {
       )
     },
   })
+    .use(mia, {
+      level: [1, 2],
+      slugify,
+      permalink: true,
+      permalinkSpace: false,
+      permalinkClass: "anchor",
+      permalinkBefore: true,
+    })
+    .use(mila, {
+      matcher(href: string) {
+        return href.startsWith("https:")
+      },
+      attrs: { target: "_blank", rel: "noopener" },
+    })
 
   return (
     <div className="prose prose-slate dark:prose-invert mx-auto mt-12 flex w-full flex-col gap-1 md:gap-2">
