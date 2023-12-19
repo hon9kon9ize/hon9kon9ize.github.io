@@ -1072,7 +1072,14 @@
   resolved "https://registry.yarnpkg.com/@types/linkify-it/-/linkify-it-3.0.5.tgz#1e78a3ac2428e6d7e6c05c1665c242023a4601d8"
   integrity sha512-yg6E+u0/+Zjva+buc3EIb+29XEg4wltq7cSmd4Uc2EE/1nUVmxyzpX6gUXD0V8jIrG0r7YeOGVIbYRkxeooCtw==
 
-"@types/markdown-it@13.0.7":
+"@types/markdown-it-link-attributes@3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@types/markdown-it-link-attributes/-/markdown-it-link-attributes-3.0.4.tgz#b95a3839d58db1d971e31502f1da627f02ee5502"
+  integrity sha512-Ky3wTFQurAF0wSfsYi+1J2yDvpZRtNBsd8CV0rwOSIgNmNX8q87FN9c9PBp+NljoQqWhJPy8eLrkQNcG86nbUQ==
+  dependencies:
+    "@types/markdown-it" "*"
+
+"@types/markdown-it@*", "@types/markdown-it@13.0.7":
   version "13.0.7"
   resolved "https://registry.yarnpkg.com/@types/markdown-it/-/markdown-it-13.0.7.tgz#4a495115f470075bd4434a0438ac477a49c2e152"
   integrity sha512-U/CBi2YUUcTHBt5tjO2r5QV/x0Po6nsYwQU4Y04fBS6vfoImaiZ6f8bi3CjTCxBPQSO1LMyUqkByzi8AidyxfA==
