@@ -362,3 +362,5 @@ Output:
 以上係一個簡單例子，我哋可以見到一個效應，當 LLMs 生成嘅語料去到一個咁上下嘅質素時，價錢同質量就會大幅改變，好平就可以買到一柞好語料，噉廣東話就唔會再係低資源語音啦。
 
 嚟緊我哋會訓練一個廣東話嘅 LLM 嚟生成更多好嘅語料，希望可以為廣東話社群做少少貢獻。
+
+PS：我哋將成個 dataset 放咗上 [Hugging Face](hon9kon9ize/38k-zh-yue-translation-llm-generated)
