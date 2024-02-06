@@ -75,7 +75,7 @@ pos 標示結果為： 約翰（名詞）好（副詞）鍾意（動詞）喺（
 2. Instruction:
 ```
 
-為咗簡化個例子，呢度只用咗一條隨機抽出嚟嘅一組 seed（1. Instruction, 2. Input, 3. Output）放喺 prompt 入面，但我哋正式生成時同 [Alpaca 原代碼](https://github.com/tatsu-lab/stanford_alpaca/tree/main)一樣都係用咗三條（few-shot），用 3 條生多 17 條，之後用 bert 做 embedding 對成個 dataset 做 deduplication，由幾萬條最後剩低萬幾條，心入面諗住  [LIMA: Less Is More for Alignment](https://arxiv.org/abs/2305.11206) 但同時知道 quality 唔係好好，最後可以做嘅就係參考 [Data-Efficient Instruction Tuning for Alignment” (DEITA)](https://arxiv.org/pdf/2312.15685.pdf) 用 LLM 評分，低過三分就唔要，最後所剩無幾。你可以喺呢度搵到我哋生成出嚟嘅[廣東話 Alpaca 語料](https://huggingface.co/hon9kon9ize/yue-alpaca)同 [script](https://github.com/hon9kon9ize/yue-alpaca)。
+為咗簡化個例子，呢度只用咗一條隨機抽出嚟嘅一組 seed（1. Instruction, 2. Input, 3. Output）放喺 prompt 入面，但我哋正式生成時同 [Alpaca 原代碼](https://github.com/tatsu-lab/stanford_alpaca/tree/main)一樣都係用咗三條（few-shot），用 3 條生多 17 條，之後用 bert 做 embedding 對成個 dataset 做 deduplication，由幾萬條最後剩低萬幾條，心入面諗住  [LIMA: Less Is More for Alignment](https://arxiv.org/abs/2305.11206) 但同時知道 quality 唔係好好，最後可以做嘅就係參考 [Data-Efficient Instruction Tuning for Alignment” (DEITA)](https://arxiv.org/pdf/2312.15685.pdf) 用 LLM 評分，低過三分就唔要，最後所剩無幾。你可以喺呢度搵到我哋生成出嚟嘅[廣東話 Alpaca 語料](https://huggingface.co/datasets/hon9kon9ize/yue-alpaca)同 [script](https://github.com/hon9kon9ize/yue-alpaca)。
 
 以上做法可以應用係唔同嘅生成方法上，好似 [WizradLM](https://arxiv.org/abs/2304.12244)，[DEITA](https://arxiv.org/pdf/2312.15685.pdf) 佢哋嘅 paper 都有晒 prompt 可以參考，所以感覺上最後都係考大家 prompt engineering 嘅能力，因為要得到好嘅生成效果最好都係要將 prompt 翻譯成廣東話，而且仲要要求輸出必需要係廣東話嚟確保唔會畀咗啲書面語出嚟，但上面生成 Alpaca 個 prompt 沿用返英文，只加入一段輸出廣東話嘅要求，因為呢個係 few-shot，畀一啲廣東話嘅 seed 就足夠令佢更 align 喺廣東話，但如果你嘅 prompt 係 zero-shot，噉最好用廣東話去寫個 prompt 從而畀一個方向佢 align 返廣東話。
 
