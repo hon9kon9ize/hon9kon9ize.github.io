@@ -1,9 +1,10 @@
 import type { Metadata } from "next"
 import { Space_Mono } from "next/font/google"
+import { GoogleAnalytics } from "@next/third-parties/google"
 
 import "./globals.css"
 
-import { Footer, GoogleAnalytics } from "@/components"
+import { Footer } from "@/components"
 
 const inter = Space_Mono({ weight: "400", subsets: ["latin"] })
 
@@ -22,13 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <GoogleAnalytics />
         <div className="flex min-h-screen flex-col">
           <main className="flex flex-1 flex-col p-8 md:p-24">{children}</main>
           <Footer />
         </div>
         {modal}
       </body>
+      <GoogleAnalytics gaId="GTM-KPLTXTGR" />
     </html>
   )
 }

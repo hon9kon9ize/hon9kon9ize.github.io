@@ -68,27 +68,20 @@ const Overlay: React.FC = () => {
           </NavItemLink>
         </Link>
 
-        <NavItemLink className="cursor-not-allowed">
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Chrome Extension <ItemArrow />
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly translates selected words into Cantonese.
-            <br />
-            [COMING SOON...]
-          </p>
-        </NavItemLink>
-
-        <NavItemLink className="cursor-not-allowed">
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            CantoneseLLM <ItemArrow />
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            A pre-trained large language model for Cantonese.
-            <br />
-            [COMING SOON...]
-          </p>
-        </NavItemLink>
+        <Link
+          legacyBehavior
+          href="https://huggingface.co/hon9kon9ize"
+          target="_blank"
+        >
+          <NavItemLink className="cursor-pointer">
+            <h2 className={`mb-3 text-2xl font-semibold`}>
+              CantoneseLLM <ItemArrow />
+            </h2>
+            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+              Cantonese Large Language Model
+            </p>
+          </NavItemLink>
+        </Link>
 
         <Link href="/posts" legacyBehavior>
           <NavItemLink className="cursor-pointer">
