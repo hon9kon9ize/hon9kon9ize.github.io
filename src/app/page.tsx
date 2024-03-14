@@ -39,22 +39,25 @@ const Overlay: React.FC = () => {
   return (
     <div className="relative z-10 flex flex-1 flex-col items-center justify-between">
       <div className="relative flex flex-1 place-items-center">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/logo.svg"
-          alt="hon9kon9ize logo"
-          width={420}
-          height={32}
-          style={{
-            width: "100%",
-            height: "auto",
-          }}
-          sizes="100vw"
-          priority
-        />
+        <div className="flex flex-col items-center justify-between gap-4">
+          <Image
+            className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
+            src="/logo.svg"
+            alt="hon9kon9ize logo"
+            width={420}
+            height={32}
+            style={{
+              width: "100%",
+              height: "auto",
+            }}
+            sizes="100vw"
+            priority
+          />
+          <p className="text-gray-500">AI Lab</p>
+        </div>
       </div>
 
-      <div className="mb-32 mt-8 grid text-center md:mt-0 lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
+      <div className="mb-32 mt-8 grid justify-center text-center md:mt-0 lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-3 lg:text-left">
         <Dialog />
         <Link legacyBehavior href="/about">
           <NavItemLink className="cursor-pointer">
@@ -78,7 +81,8 @@ const Overlay: React.FC = () => {
               CantoneseLLM <ItemArrow />
             </h2>
             <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-              Cantonese Large Language Model
+              CantoneseLLM is a language model family that specifically intended
+              for Cantonese language.
             </p>
           </NavItemLink>
         </Link>

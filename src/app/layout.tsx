@@ -24,7 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="flex min-h-screen flex-col">
-          <main className="flex flex-1 flex-col p-8 md:p-24">{children}</main>
+          <main className="flex flex-1 flex-col overflow-hidden p-8 md:p-24">
+            {children}
+          </main>
           <Footer />
         </div>
         {modal}
