@@ -12,7 +12,7 @@ const NavItemLink = forwardRef<
     children: React.ReactNode
     asChild?: boolean
   } & React.AnchorHTMLAttributes<HTMLAnchorElement>
->(({ children, href, ...props }, ref) => {
+>(({ children, ...props }, ref) => {
   return (
     <a
       ref={ref}
@@ -57,7 +57,7 @@ const Overlay: React.FC = () => {
         </div>
       </div>
 
-      <div className="mb-32 mt-8 grid justify-center text-center md:mt-0 lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-3 lg:text-left">
+      <div className="mb-32 mt-8 grid justify-center text-center md:mt-0 lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
         <Dialog />
         <Link legacyBehavior href="/about">
           <NavItemLink className="cursor-pointer">
@@ -71,12 +71,19 @@ const Overlay: React.FC = () => {
           </NavItemLink>
         </Link>
 
-        <Link
-          legacyBehavior
-          href="https://huggingface.co/hon9kon9ize"
-          target="_blank"
-        >
+        <Link legacyBehavior href="/services">
           <NavItemLink className="cursor-pointer">
+            <h2 className={`mb-3 text-2xl font-semibold`}>
+              Services <ItemArrow />
+            </h2>
+            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+              We provide model training and consulting services
+            </p>
+          </NavItemLink>
+        </Link>
+
+        <Link legacyBehavior passHref href="https://huggingface.co/hon9kon9ize">
+          <NavItemLink target="_blank" className="cursor-pointer">
             <h2 className={`mb-3 text-2xl font-semibold`}>
               CantoneseLLM <ItemArrow />
             </h2>

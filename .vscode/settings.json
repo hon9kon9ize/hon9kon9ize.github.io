@@ -5,6 +5,7 @@
     "headlessui",
     "hljs",
     "Hongkongize",
+    "huggingface",
     "markdownit",
     "tailwindcss"
   ]
