@@ -71,17 +71,6 @@ const Overlay: React.FC = () => {
           </NavItemLink>
         </Link>
 
-        <Link legacyBehavior href="/services">
-          <NavItemLink className="cursor-pointer">
-            <h2 className={`mb-3 text-2xl font-semibold`}>
-              Services <ItemArrow />
-            </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-              We provide model training and consulting services
-            </p>
-          </NavItemLink>
-        </Link>
-
         <Link legacyBehavior passHref href="https://huggingface.co/hon9kon9ize">
           <NavItemLink target="_blank" className="cursor-pointer">
             <h2 className={`mb-3 text-2xl font-semibold`}>
