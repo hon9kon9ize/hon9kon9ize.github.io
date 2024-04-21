@@ -4,7 +4,6 @@ image: /images/llm-finetuning3.jpg
 description: 之前兩篇文章都係講啲準備工夫，揀好個 pretrained model，又有 fine tune 嘅 dataset，呢篇最終回就梗係開波 train 啦...
 updated: 2024-04-21 11:50GMT
 author: Joseph Cheng
-
 ---
 
 ![調教廣東話大語言模型三步曲之三 - 微調訓練](/images/llm-finetuning3.jpg)
