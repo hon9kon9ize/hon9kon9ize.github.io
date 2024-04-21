@@ -189,7 +189,7 @@ chat([{"role": "user", "content": "香港人係咪中國人？"}], max_new_token
 - Who is the Chief Executive of Hong Kong?
 
 ```python
-chat([{"role": "user", "content": "香港人係咪中國人？"}], max_new_tokens=512, temperature=0.5)
+chat([{"role": "user", "content": "Who is the Chief Executive of Hong Kong?"}], max_new_tokens=512, temperature=0.5)
 
 ###
 The Chief Executive of Hong Kong is currently Carrie Lam, who was appointed by the Chief Executive Election Committee on 14th February 2017. She is the 10th Chief Executive and the first female Chief Executive in Hong Kong's history.  
