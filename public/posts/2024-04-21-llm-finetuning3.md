@@ -37,7 +37,7 @@ author: Joseph Cheng
 
 ##  開波!
 
-講咗咁耐終於到戲肉啦，我哋會用 Aligment Handbook 做示範。首先安裝：
+講咗咁耐終於到戲肉啦，我哋會用 Alignment Handbook 做示範。首先安裝：
 
 ```bash
 git clone https://github.com/huggingface/alignment-handbook.git
