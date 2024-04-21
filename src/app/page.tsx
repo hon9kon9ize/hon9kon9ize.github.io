@@ -57,7 +57,7 @@ const Overlay: React.FC = () => {
         </div>
       </div>
 
-      <div className="mb-32 mt-8 grid justify-center text-center md:mt-0 lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
+      <div className="mb-32 mt-8 grid justify-center text-center md:mt-0 lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-3 lg:text-left">
         <Dialog />
         <Link legacyBehavior href="/about">
           <NavItemLink className="cursor-pointer">
