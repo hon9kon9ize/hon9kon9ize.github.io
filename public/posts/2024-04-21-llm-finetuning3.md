@@ -24,7 +24,7 @@ author: Joseph Cheng
 
 ![Lora](/images/lora_diagram.jpeg)
 
-之又後計下先，假設用 Lora rank 8 夠 fit 到我哋個 dataset，如果一個 transformers block 嘅 hidden size = 4096, W0 = (4096 x 4096), r = 8, A = W x r, B = r x W, 屈指一算，最後得出 4096 * 8 + 8 * 4096 = 65,536，即是一個 block 嘅 trainable parameters 只有 0.4%，噉就實夠做啦！
+之後計下先，假設用 Lora rank 8 夠 fit 到我哋個 dataset，如果一個 transformers block 嘅 hidden size = 4096, W0 = (4096 x 4096), r = 8, A = W x r, B = r x W, 屈指一算，最後得出 4096 * 8 + 8 * 4096 = 65,536，即是一個 block 嘅 trainable parameters 只有 0.4%，噉就實夠做啦！
 
 搞咁多嘢就梗係有 trade off，Lora rank 如果 set 唔夠係會記唔到個 dataset，但太多又會 overfit 搞到唔夠 general，要摸到個好嘅 hyperparameters 組合先搞得掂，大家可以參考 [# NeurIPS Large Language Model Efficiency Challenge:  1 LLM + 1GPU + 1Day](https://llm-efficiency-challenge.github.io/) 啲 team 點去 set，佢哋都係一張 GPU 一日內 train 完。
 
