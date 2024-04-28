@@ -13,7 +13,7 @@ author: Joseph Cheng
 1. 多大的語料才足夠令一個大語言模型學會說廣東話？
 2. 持續預訓練（Continual Pre-Training）對原有基礎模型的影響（Benchmark 方面、及 Catastrophic Forgetting 現像）。
 
-我們借鏡了台灣的 (Taiwan LLM)[https://github.com/MiuLab/Taiwan-LLM/blob/main/twllm_paper.pdf] 訓練方法，進行兩個階段的訓練，第一階段是用大量的廣東話語料持續預訓練一個基礎模型，第二階段是以對說語料進行微調。
+我們借鏡了台灣的 [Taiwan LLM](https://github.com/MiuLab/Taiwan-LLM/blob/main/twllm_paper.pdf) 訓練方法，進行兩個階段的訓練，第一階段是用大量的廣東話語料持續預訓練一個基礎模型，第二階段是以對說語料進行微調。
 
 ## 持續預訓練(Continual Pre-Training)  
 
