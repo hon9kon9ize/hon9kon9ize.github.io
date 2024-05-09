@@ -53,7 +53,7 @@ const Overlay: React.FC = () => {
             sizes="100vw"
             priority
           />
-          <p className="text-gray-500">Hong Kong AI Community</p>
+          <p className="text-gray-500">Hong Kong AI Research Community</p>
         </div>
       </div>
 
