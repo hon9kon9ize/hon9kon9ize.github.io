@@ -52,7 +52,7 @@ spm_train --input=raw_corpus.txt \
 注意，以上的 arguments 都是針對 Yi-6B 模型的，如果你用其他模型，可能要調整一下。這個命令會生成一個 yue_bpe.model 和 yue_bpe.vocab 的文件，然後我們要把這兩個文件放到模型的資料夾中，然後建立一個新的 LLaMaTokenizer。  
 
 ```python
-	def expend_tokenizer(tokenizer: LlamaTokenizer, sp_bpe: spm.SentencePieceProcessor):
+def expend_tokenizer(tokenizer: LlamaTokenizer, sp_bpe: spm.SentencePieceProcessor):
 	llama_proto = sp_pb2_model.ModelProto()
 	llama_proto.ParseFromString(tokenizer.sp_model.serialized_model_proto())
 	cantonese_proto = sp_pb2_model.ModelProto()
@@ -193,6 +193,10 @@ resize_embedding_layer(model, tokenizer)
 ![語料類別分佈](/images/meta-chart.jpg)
 
 [Textbooks](https://arxiv.org/abs/2306.11644) 是一種文字語料生成方法，借助現有的大語言模型，把少量的文字片段給它們轉化成詳盡的教學型式的材料。這個方式不是主要為了增加語料量，而是為了提供高質的內容令語音模式更容易學會文字之間的關聯及知識。但它成了我們在語料不足問題上一個解決方法。我們把它上載到 HuggingFace 連帶生成的方法。
+
+訓練過程用了一張 A100(80GB) 訓練了 1 個 epoch，大概花了 1 天時間，最後的 loss 是 `2.1`，這個 loss 是不是很高。
+
+[Wandb](https://api.wandb.ai/links/indiejoseph/63iq17wf)
 
 ## 微調
 
