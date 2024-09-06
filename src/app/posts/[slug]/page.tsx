@@ -4,6 +4,7 @@ import { Metadata, ResolvingMetadata } from "next"
 import matter from "gray-matter"
 import hljs from "highlight.js"
 import MarkdownIt from "markdown-it"
+import { html5Media } from 'markdown-it-html5-media'
 import mia from "markdown-it-anchor"
 import mila from "markdown-it-link-attributes"
 
@@ -131,6 +132,7 @@ export default function Post(context: { params: PathsParams }) {
       },
       attrs: { target: "_blank", rel: "noopener" },
     })
+    .use(html5Media)
 
   return (
     <div className="prose prose-slate dark:prose-invert mx-auto mt-12 flex w-full flex-col gap-1 md:gap-2">

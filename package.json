@@ -24,6 +24,7 @@
     "highlight.js": "11.9.0",
     "markdown-it": "^14.1.0",
     "markdown-it-anchor": "8.6.7",
+    "markdown-it-html5-media": "0.7.1",
     "markdown-it-link-attributes": "4.0.1",
     "next": "14.2.2",
     "react": "^18",
